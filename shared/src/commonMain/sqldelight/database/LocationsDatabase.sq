@@ -1,0 +1,29 @@
+CREATE TABLE locationEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    latitude TEXT NOT NULL,
+    longitude TEXT NOT NULL,
+    name TEXT NOT NULL
+);
+
+getAllLocations:
+SELECT *
+FROM locationEntity;
+
+getLocationById:
+SELECT *
+FROM locationEntity
+WHERE id = ?;
+
+insertLocation:
+INSERT OR REPLACE
+INTO locationEntity(
+    id,
+    latitude,
+    longitude,
+    name
+) VALUES(?, ?, ?,?);
+
+deleteLocationById:
+DELETE
+FROM locationEntity
+WHERE id=?;
